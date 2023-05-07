@@ -192,4 +192,32 @@ git commit -m "commit message"
 
 Once your code changes appear in master branch – Jenkins will do its job and save all the files (build artifacts) to ***/var/lib/jenkins/jobs/ansible/builds/<build_number>/archive/*** directory on ***Jenkins-Ansible server***.
 
+## RUN FIRST ANSIBLE TEST
 
+- ## ***Step 7 – Run first Ansible test***
+
+- Now, it is time to execute ***ansible-playbook*** command and verify if your playbook actually works:
+
+`cd ansible-config-mgt`
+
+`ansible-playbook -i inventory/dev.yml playbooks/common.yml`
+
+<img width="960" alt="Ansible playbooks worked" src="https://user-images.githubusercontent.com/115954100/236698209-76526330-07da-40b4-8f68-4f69677c2b1b.png">
+
+- You can go to each of the servers and check if wireshark has been installed by running `which wireshark or wireshark --version`
+
+<img width="576" alt="wireshark version" src="https://user-images.githubusercontent.com/115954100/236698226-c121615b-7e64-4f4f-a092-89b0a6d5a829.png">
+
+- Your updated with Ansible architecture now looks like this:
+
+<img width="442" alt="Arch" src="https://user-images.githubusercontent.com/115954100/236698503-77c2b6cb-04f0-415d-b938-bbdc4b8704c9.png">
+
+- **Optional step – Repeat once again**
+
+- Update your ansible playbook with some new Ansible tasks and go through the full
+
+- **checkout -> change codes -> commit -> PR -> merge -> build -> ansible-playbook** cycle again to see how easily you can manage a servers fleet of any size with just one command!
+
+- Congratulations
+
+- You have just automated your routine tasks by implementing your first Ansible project! There is more exciting projects ahead, so lets keep it moving!
